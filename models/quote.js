@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Project extends Model {}
+class Quote extends Model {}
 
 Project.init(
   {
@@ -11,21 +11,21 @@ Project.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    author: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    quote: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    comment: {
       type: DataTypes.STRING,
     },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
-    },
-    needed_funding: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -44,4 +44,4 @@ Project.init(
   }
 );
 
-module.exports = Project;
+module.exports = Quote;
