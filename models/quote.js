@@ -40,7 +40,7 @@ Quote.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'quote',
   }
 );
 
