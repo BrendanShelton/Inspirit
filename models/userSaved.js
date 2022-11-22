@@ -21,11 +21,20 @@ UserSaved. init(
         },
         user_id: {
             type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-        unique: false
-      }
+            references: {
+            model: 'user',
+            key: 'id',
+            unique: false
+            }
         }
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'project',
     }
-)
+);
+
+module.exports = UserSaved;
