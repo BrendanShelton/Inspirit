@@ -1,4 +1,4 @@
-<nav>
+{{!-- <nav>
     <div id = "navbar-menu">
         <ul id = "on-top" class = "navbar-links">
             <li class = "nav-option">
@@ -6,7 +6,7 @@
             </li>
             {{#if logged_in}}
             <a href="/">Profile</a> |
-            <button class="no-button" id="logout">Logout</button>
+            <button class="button" id="logout">Logout</button>
             {{else}}
             <a href="/">Login</a>
             {{/if}}
@@ -18,4 +18,38 @@
             </li>
         </ul>
     </div>
+</nav> --}}
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item">
+        Home
+      </a>
+
+      <a class="navbar-item">
+        Portfolio
+      </a>
+
+      <a class="navbar-item">
+        Inspire
+      </a>
+
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a>
+            {{#if logged_in}}
+            <a href="/">Profile</a> |
+            <button class="button is-primary" id="logout">Logout</button>
+            {{else}}
+             <button class="button is-primary" id="login">Login/Sign-Up</button>
+            {{/if}}
+          </a>
+      </div>
+    </div>
+  </div>
 </nav>

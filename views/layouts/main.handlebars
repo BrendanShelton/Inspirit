@@ -7,6 +7,7 @@
   <title>Inspirit: Discover Your Inspiration</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 
 <body>
@@ -18,9 +19,7 @@
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
-    <footer>
-      
-    </footer>
+    {{> footer}}
   </div>
 
   <!-- Render script for logged in users only -->
@@ -28,12 +27,5 @@
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
-
-<footer>
-  <p> If you'd like to contact us, then you may do so with the provided information below:
-    Email: ...
-    Number: ...
-  </p>
-</footer>
 
 </html>
