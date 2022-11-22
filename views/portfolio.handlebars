@@ -1,0 +1,44 @@
+<p> Below are your saved pieces of inspiration. You may look or edit your comments/thoughts to them as well as remove them when you are finished. If you would like to include your own quote, then contribute!</p>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>An Additional Spark of Inspiration? Add that below.</h3>
+
+    <form class="form new-quote-form">
+      <div class="form-group">
+        <label for="quote-name">Quote:</label>
+        <input class="form-input" type="text" id="quote-name" name="quote-name" />
+      </div>
+      <div class="form-group">
+        <label for="speaker-author">Author:</label>
+        <input class="form-input" type="text" id="speaker-author" name="speaker-author" />
+      </div>
+      <div class="form-group">
+        <label for="comment">Why do you feel this quote is inspiring?  How has it inspired you?</label>
+        <textarea class="form-input" id="comment-desc" name="comment-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if portfolio.length}}
+  <div class="col-md-6 project-list">
+    <h3>Currently saved pieces of inspiration:</h3>
+
+    {{#each quotes as |portfolio|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/project/{{quote.id}}">{{quote.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{quote.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/profile.js"></script>
