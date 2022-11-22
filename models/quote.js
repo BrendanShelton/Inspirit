@@ -16,7 +16,7 @@ Quote.init(
       allowNull: false,
     },
     quote: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     date_created: {

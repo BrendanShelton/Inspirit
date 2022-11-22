@@ -1,6 +1,6 @@
 const User = require('./User');
-const Quote = require('./quote');
-const UserSaved = require('./userSaved');
+const Quote = require('./Quote');
+const UserSaved = require('./UserSaved');
 
 Quote.belongsToMany(User, {
   through: {
@@ -17,5 +17,13 @@ User.belongsToMany(Quote, {
   },
   as: 'users_saved'
 });
+
+/*Quote.belongsTo(User, {
+  foreignKey: "user_id"
+})
+
+User.belongsToMany(Quote, {
+  foreignKey: "user_id"
+})*/
 
 module.exports = { User, Quote, UserSaved };
