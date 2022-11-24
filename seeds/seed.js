@@ -23,13 +23,6 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  /*for (const quote of quoteData) {
-    await Quote.create({
-      ...quote,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-    });
-  }*/
-
   process.exit(0);
 };
 
