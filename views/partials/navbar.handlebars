@@ -24,17 +24,12 @@
   
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item">
-        Home
-      </a>
 
-      <a class="navbar-item">
-        Portfolio
-      </a>
+      <a href="/homepage"><button class="button is-primary" id="home">Home</button></a>
 
-      <a class="navbar-item">
-        Inspire
-      </a>
+      <a href="/portfolio"><button class="button is-primary" id="portfolio">Portfolio</button></a>
+
+      <a href="/inspiration"><button class="button is-primary" id="inspiration">Inspire Me</button></a>
 
     </div>
 
@@ -46,7 +41,7 @@
             <a href="/">Profile</a> |
             <button class="button is-primary" id="logout">Logout</button>
             {{else}}
-             <a href="/login" ><button class="button is-primary" id="login">Login/Sign-Up</button></a>
+             <a href="/login"><button class="button is-primary" id="login">Login/Sign-Up</button></a>
             {{/if}}
           </a>
       </div>
