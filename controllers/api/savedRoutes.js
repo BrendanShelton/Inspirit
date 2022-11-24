@@ -25,7 +25,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     });
 
     if (!saved) {
-      res.status(404).json({ message: 'No project found with this id!' });
+      res.status(404).json({ message: 'No saved quote found with this id!' });
       return;
     }
 

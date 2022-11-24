@@ -5,6 +5,31 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
+    /*const quoteData = await Quote.findAll({
+      /*include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+    
+    // Serialize data so the template can read it
+    const quotes = quoteData.map((quote) => quote.get({ plain: true }));*/
+
+    // Pass serialized data and session flag into template
+    res.render('homepage', { 
+      //quotes, 
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/inspiration', async (req, res) => {
+  try {
+    // Get all projects and JOIN with user data
     const quoteData = await Quote.findAll({
       /*include: [
         {
@@ -53,7 +78,7 @@ router.get('/', async (req, res) => {
 router.get('/portfolio', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
-    const userData = await User.findByPk(1, {
+    const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Quote, through: UserSaved, as: 'users_saved' }],
     });
