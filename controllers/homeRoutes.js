@@ -43,7 +43,7 @@ router.get('/inspiration', async (req, res) => {
     const quotes = quoteData.map((quote) => quote.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
+    res.render('inspiration', { 
       quotes, 
       logged_in: req.session.logged_in 
     });
