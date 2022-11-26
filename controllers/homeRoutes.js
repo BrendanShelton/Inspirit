@@ -30,14 +30,7 @@ router.get('/', async (req, res) => {
 router.get('/inspiration', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
-    const quoteData = await Quote.findAll({
-      /*include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],*/
-    });
+    const quoteData = await Quote.findAll();
     
     // Serialize data so the template can read it
     const quotes = quoteData.map((quote) => quote.get({ plain: true }));
@@ -83,10 +76,10 @@ router.get('/portfolio', withAuth, async (req, res) => {
       include: [{ model: Quote, through: UserSaved, as: 'users_saved' }],
     });
 
-    res.status(200).json(userData)
+    //res.status(200).json(userData)
     const user = userData.get({ plain: true });
 
-    res.render('profile', {
+    res.render('portfolio', {
       ...user,
       logged_in: true
     });
