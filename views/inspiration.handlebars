@@ -1,30 +1,37 @@
 <div>
+  {{#each quotes as |quote|}}
+    {{!-- {{> quotes}} --}}
+    <h4>{{quote.quote}}</h4>
+    <h5>{{quote.author}}</h5>
+  {{/each}}
+  <a href='#' class='previous-quote'>&laquo; Previous quote</a>
 
-  {{> quotes}}
+  <a href='#' class='next-quote'>Next &raquo;</a>
 
-  <a href = "#" class = "previous-quote">&laquo; Previous quote</a>
-
-  <a hred = "#" class = "next-quote">Next &raquo;</a>
-
-  <p>
+  {{! <p>
 
     <button class="btn btn-primary">Next quote</button>
-  </p>
+  </p> }}
 
+  <form class='comment'>
 
-  <form class = "comment">
+    <label for='comment'>Feeling inspired? Jot down any thoughts here.</label>
 
-    <label for = "comment">Feeling inspired? Jot down any thoughts here.</label>
+    <input type='text' id='comment' name='comment' />
 
-    <input type = "text" id = "comment" name = "comment">
+    <br />
 
-    <br>
+    <input
+      type='checkbox'
+      id='saveToPortfolio'
+      name='saveToPortfolio'
+      value='Save'
+    />
 
-    <input type = "checkbox" id = "saveToPortfolio" name = "saveToPortfolio" value = "Save">
+    <label for='saveToPortfolio'>
+      Save your inspiration to your portfolio!</label>
 
-    <label for = "saveToPortfolio"> Save your inspiration to your portfolio!</label>
-
-    <br>
+    <br />
 
   </form>
 
