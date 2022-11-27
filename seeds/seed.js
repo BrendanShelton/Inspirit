@@ -8,15 +8,22 @@ const userSavedData = require('./userSavedData.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  await User.bulkCreate(userData, {
+  const users = await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
   });
 
-  await Quote.bulkCreate(quoteData, {
-    individualHooks: true,
-    returning: true,
-  });
+  for (const quote of quoteData) {
+    await Quote.create({
+      ...quote,
+      user_id: users[Math.floor(Math.random() * users.length)].id,
+    });
+  }
+
+  // await Quote.bulkCreate(quoteData, {
+  //   individualHooks: true,
+  //   returning: true,
+  // });
 
   await UserSaved.bulkCreate(userSavedData, {
     individualHooks: true,
