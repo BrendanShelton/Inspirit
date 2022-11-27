@@ -18,16 +18,16 @@
         <textarea class="form-input" id="comment-desc" name="comment-desc"></textarea>
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary" id="post-quote">Create</button>
       </div>
     </form>
   </div>
 
-  {{#if portfolio.length}}
-  <div class="col-md-6 project-list">
+  {{#if user.user_saved.length}}
+  <div class="col-md-6 quote-list">
     <h3>Currently saved pieces of inspiration:</h3>
 
-    {{#each quotes as |portfolio|}}
+    {{#each user.user_saved as |quote|}}
     <div class="row mb-2">
       <div class="col-md-8">
         <h4><a href="/project/{{quote.id}}">{{quote.name}}</a></h4>
