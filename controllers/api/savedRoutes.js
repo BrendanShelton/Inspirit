@@ -19,7 +19,7 @@ router.delete('/:id', withAuth, async (req, res) => {
   try {
     const saved = await UserSaved.destroy({
       where: {
-        id: req.params.id,
+        quote_id: req.params.id,
         user_id: req.session.user_id,
       },
     });
