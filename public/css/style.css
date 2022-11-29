@@ -18,7 +18,11 @@ header, .project:not(:last-child) {
 }
 
 .home-container {
-  background-image: url('../../images/homepageimage.jpg');
+  background-image: url('/images/homepageimage.jpg');
   
 }
 
+.card {
+  width: 30%;
+  height: 80%;
+}

@@ -1,5 +1,6 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
+  console.log('clicked');
 
   const quoteId = event.target.getAttribute('data-id');
   
@@ -23,5 +24,5 @@ const newFormHandler = async (event) => {
 
 document
   .querySelector('.save-quote')
-  .addEventListener('submit', newFormHandler);
+  .addEventListener('click', newFormHandler);
 
