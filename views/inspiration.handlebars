@@ -2,38 +2,32 @@
   
   {{#each quotes as |quote|}}
   <div class="card text-center ml-4 mr-4 mb-5 border-dark">
-    <div class="card-body bg-danger text-light">
+    <div class="card-body bg-secondary text-light">
     <h4 class="card-header">{{quote.quote}}</h4>
     <h5 class="card-title">{{quote.author}}</h5>
+    <input data-id="{{quote.id}}" type='checkbox' id='saveToPortfolio' name='saveToPortfolio'
+      value='Save'/> <label for='saveToPortfolio'>Save your inspiration to your portfolio!</label>
     </div>
   </div>
   {{/each}}
-  <a href='#' class='previous-quote'>&laquo; Previous quote</a>
+  {{!-- <a href='#' class='previous-quote'>&laquo; Previous quote</a>
 
-  <a href='#' class='next-quote'>Next &raquo;</a>
+  <a href='#' class='next-quote'>Next &raquo;</a> --}}
 
   {{! <p>
 
     <button class="btn btn-primary">Next quote</button>
   </p> }}
 
-  <form class='comment'>
+  {{!-- <form class='comment'>
 
     <label for='comment'>Feeling inspired? Jot down any thoughts here.</label>
 
     <input type='text' id='comment' name='comment' />
 
-    <br />
+    <br /> --}}
 
-    <input
-      type='checkbox'
-      id='saveToPortfolio'
-      name='saveToPortfolio'
-      value='Save'
-    />
-
-    <label for='saveToPortfolio'>
-      Save your inspiration to your portfolio!</label>
+    
 
     <br />
 

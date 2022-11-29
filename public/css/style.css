@@ -22,3 +22,7 @@ header, .project:not(:last-child) {
   
 }
 
+.card {
+  width: 20%;
+}
+
