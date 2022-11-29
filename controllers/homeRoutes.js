@@ -4,10 +4,11 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
+
     // Pass serialized data and session flag into template
-    res.render('homepage', {
-      //quotes,
-      logged_in: req.session.logged_in,
+    res.render('homepage', { 
+      //quotes, 
+      logged_in: req.session.logged_in 
     });
   } catch (err) {
     res.status(500).json(err);
@@ -18,16 +19,15 @@ router.get('/inspiration', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     const quoteData = await Quote.findAll();
-
+    
     // Serialize data so the template can read it
     const quotes = quoteData.map((quote) => quote.get({ plain: true }));
-    // Pass serialized data and session flag into template
-    res.render('inspiration', {
-      quotes,
-      logged_in: req.session.logged_in,
-    });
 
-    // res.json(quotes);
+    // Pass serialized data and session flag into template
+    res.render('inspiration', { 
+      quotes, 
+      logged_in: req.session.logged_in 
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -66,10 +66,10 @@ router.get('/portfolio', withAuth, async (req, res) => {
 
     //res.status(200).json(userData)
     const user = userData.get({ plain: true });
-
+    //console.log(user)
     res.render('portfolio', {
-      user,
-      logged_in: true,
+      ...user,
+      logged_in: true
     });
   } catch (err) {
     res.status(500).json(err);

@@ -23,6 +23,7 @@ const newFormHandler = async (event) => {
 };
 
 const delButtonHandler = async (event) => {
+  
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
@@ -42,6 +43,6 @@ document
   .querySelector('#post-quote')
   .addEventListener('submit', newFormHandler);
 
-// document
-//   .querySelector('.quote-list')
-//   .addEventListener('click', delButtonHandler);
+ document
+   .querySelector('.quote-list')
+   .addEventListener('click', delButtonHandler);
