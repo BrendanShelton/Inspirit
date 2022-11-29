@@ -22,9 +22,9 @@ header,
   width: 30%;
   height: 80%;
 }
+
 footer.footer {
   color: #00d1b2;
-  background-color: lightgray;
 }
 
 .homepage-header {
@@ -37,10 +37,4 @@ footer.footer {
 
 button {
   margin: 5px;
-}
-html {
-  background-color: lightgray;
-}
-.navbar-start {
-  background-color: lightgray;
 }
