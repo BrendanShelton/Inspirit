@@ -1,6 +1,6 @@
 const User = require('./User');
-const Quote = require('./Quote');
-const UserSaved = require('./UserSaved');
+const Quote = require('./quote');
+const UserSaved = require('./userSaved');
 
 Quote.belongsToMany(User, {
   through: {
