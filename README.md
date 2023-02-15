@@ -6,7 +6,7 @@ After creating an account, you can seek inspiration by reading quotes from a var
 
 ## Installation
 
-Nothing is needed to install this app.  Simply click on the URL below.
+This application requires node.js and MySQL Server. Clone this repository by opening a terminal in the folder which will hold it and enter "git clone https://github.com/BrendanShelton/Inspirit.git". Install dependencies by opening the main folder of this application containing "server.js" of the application in a terminal and enter "npm install". To create the database, open 
 
 ## Deployed App Link
 
